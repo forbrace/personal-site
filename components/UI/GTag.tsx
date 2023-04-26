@@ -8,7 +8,7 @@ const GTag = () => {
         id="tagmanager-main"
         strategy="afterInteractive"
         async
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GTAG}}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GTAG}`}
       ></Script>
       <Script
         id="tagmanager-setup"
