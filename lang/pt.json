@@ -1,0 +1,79 @@
+{
+  "app": {
+    "menu": {
+      "home": "Início",
+      "work": "Portfólio",
+      "contact": "Contactos"
+    },
+    "hero": {
+      "meta": {
+        "title": "Figma para HTML/CSS/JS",
+        "description": "Transforme seu desenho de Figma em código de front-end pronto para deploy em React, Next.js ou Gatsby + tailwindcss para Web e dispositivos móveis."
+      },
+      "title": "Figma para HTML/CSS/JS",
+      "summary": "Transforme seu desenho de Figma em código de front-end pronto para deploy em React, Next.js ou Gatsby + tailwindcss para Web e dispositivos móveis.",
+      "form": {
+        "title": "Fazer pedido",
+        "label": {
+          "name": "Nome",
+          "email": "Email",
+          "link": "Link para o desenho de Figma",
+          "message": "Detalhes do Projeto",
+          "button": "Enviar"
+        },
+        "dialog": {
+          "title": "Sua mensagem foi enviada!",
+          "text": "Vai receber uma resposta em breve. Obrigado!",
+          "buttonLabel": "Entendi"
+        }
+      }
+    },
+    "work": {
+      "meta": {
+        "title": "Portfólio",
+        "description": "Transforme seu desenho de Figma em código de front-end pronto para deploy em React, Next.js ou Gatsby + tailwindcss para Web e dispositivos móveis."
+      },
+      "1": {
+        "description": "Sistema profissional de doação online para arrecadação de fundos online."
+      },
+      "2": {
+        "description": "A nova forma radical de liquidar e adquirir dívidas."
+      },
+      "3": {
+        "description": "A Savio é um novo mercado online que conecta compradores e vendedores de análises, pesquisas e insights globalmente."
+      },
+      "4": {
+        "description": "Mercado B2C de artigos esportivos enviados diretamente por fabricantes na China e no Japão."
+      },
+      "5": {
+        "description": "P2P Marketplace para tarefas de mídia social. Mais de 500 celebridades inscritas, incluindo Floyd Mayweather, Khloe Kardashian, Nicki Minaj, Carmelo Anthony, Chris Brown, Snoop Dogg e Pharrell."
+      },
+      "6": {
+        "description": "Um mercado P2P pré-pago que torna mais fácil para amigos e vizinhos fazer e receber favores."
+      },
+      "7": {
+        "description": "Desenvolvimento personalizado de startups, sites e aplicativos ao conectar compradores a vendedores."
+      },
+      "8": {
+        "description": "Uma empresa global de tecnologia que desenvolve soluções corporativas inovadoras, incluindo reserva personalizável, distribuição baseada em nuvem, embalagem dinâmica e merchandising."
+      },
+      "title": "Portfólio"
+    },
+    "contact": {
+      "meta": {
+        "title": "Contactos",
+        "description": "Transforme seu desenho de Figma em código de front-end pronto para deploy em React, Next.js ou Gatsby + tailwindcss para Web e dispositivos móveis."
+      },
+      "title": "Contactos",
+      "text": "Olá, meu nome é Dima Paputsa, sou um engenheiro front-end. Venho a construir aplicativos da Web há 16 anos. Sou apaixonado por CSS e adoro criar UIs em React ou Vue.js. As interfaces que desenvolvi são usadas por centenas de milhões de pessoas. Vivo em Lisboa, adoro o mar, os barcos e a vida tranquila e sem stress no belo Portugal. Se desejar transformar seu design em um bom html/css/js  em React/Next.js/Gatsby, provavelmente posso ajudá-lo. Basta mandar-me uma mensagem.",
+      "form": {
+        "title": "Mande-me uma mensagem",
+        "label": {
+          "email": "Email",
+          "message": "Mensagem",
+          "button": "Enviar"
+        }
+      }
+    }
+  }
+}

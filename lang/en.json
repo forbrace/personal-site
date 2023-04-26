@@ -1,0 +1,79 @@
+{
+  "app": {
+    "menu": {
+      "home": "Home",
+      "work": "Work",
+      "contact": "Contact"
+    },
+    "hero": {
+      "meta": {
+        "title": "Figma to HTML/CSS/JS",
+        "description": "Get your design converted into production-ready frontend code on React, Next.js or Gatsby + tailwindcss for web and mobile."
+      },
+      "title": "Figma to HTML/CSS/JS",
+      "summary": "Get your design converted into production-ready frontend code on React, Next.js or Gatsby + tailwindcss for web and mobile.",
+      "form": {
+        "title": "Get a Quote",
+        "label": {
+          "name": "Name",
+          "email": "Email",
+          "link": "Figma design link",
+          "message": "Project details",
+          "button": "Send"
+        },
+        "dialog": {
+          "title": "Your message has been submitted!",
+          "text": "You will get an answer soon. Thank you!",
+          "buttonLabel": "Got it, thanks!"
+        }
+      }
+    },
+    "work": {
+      "meta": {
+        "title": "Work – Figma to HTML/CSS/JS",
+        "description": "Get your design converted into production-ready frontend code on React, Next.js or Gatsby + tailwindcss for web and mobile."
+      },
+      "1": {
+        "description": "Professional online donation system for serious online fundraising."
+      },
+      "2": {
+        "description": "The radical new way to liquidate and acquire debts."
+      },
+      "3": {
+        "description": "Savio is a new online marketplace connecting buyers and sellers of analytics, research and insight, globally."
+      },
+      "4": {
+        "description": "B2C marketplace of sporting goods shipped directly by manufacturers in China and Japan."
+      },
+      "5": {
+        "description": "P2P Marketplace for social media tasks. Over 500 signed celebs including Floyd Mayweather, Khloe Kardashian, Nicki Minaj, Carmelo Anthony, Chris Brown, Snoop Dogg, Pharrell."
+      },
+      "6": {
+        "description": "A pay-it-forward P2P marketplace that makes it easy for friends and neighbors to do and receive favors."
+      },
+      "7": {
+        "description": "Custom peer-to-peer marketplace startups, websites & apps development connecting buyers to sellers."
+      },
+      "8": {
+        "description": "A global technology company building innovative enterprise solutions including customizable bookability, cloud-based distribution, dynamic packaging and merchandising."
+      },
+      "title": "Work"
+    },
+    "contact": {
+      "meta": {
+        "title": "Contact – Figma to HTML/CSS/JS",
+        "description": "Get your design converted into production-ready frontend code on React, Next.js or Gatsby + tailwindcss for web and mobile."
+      },
+      "title": "Contact",
+      "text": "Hi, my name is Dima Paputsa, I'm a startup front-end engineer. I've been building client side web applications for 16 years. I have a passion about CSS, and love to craft UIs on React or Vue.js. The interfaces I developed are used by hundreds of millions people. I live in Lisbon, love the ocean, boats and stress-free quiet life in beautiful Portugal. If you are looking to transform your design into nice html/css/js with React/Next.js/Gatsby I can probably help you. Just drop me a message.",
+      "form": {
+        "title": "Drop me a message",
+        "label": {
+          "email": "Email",
+          "message": "Message",
+          "button": "Let's talk"
+        }
+      }
+    }
+  }
+}
