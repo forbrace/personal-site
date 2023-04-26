@@ -20,8 +20,8 @@ const Footer = () => {
   return (
     <div>
       {/* <div className="h-px flex-auto bg-zinc-200 dark:bg-zinc-800" /> */}
-      <div className="container mx-auto px-6 flex items-center justify-between py-5 text-sm font-bold">
-        <div className="flex items-center">
+      <div className="container mx-auto px-6 flex flex-wrap -m-1 justify-between py-5 text-sm font-bold">
+        <div className="m-1">
           Powered by&nbsp;
           <a
             href="https://nextjs.org"
@@ -29,8 +29,8 @@ const Footer = () => {
             target="_blank"
           >
             Next.js
-          </a>
-          , Hosted on&nbsp; 
+          </a>,
+           Hosted on&nbsp;
           <a
             href="https://vercel.com"
             className="underline decoration-solid hover:text-rose-600"
@@ -38,9 +38,8 @@ const Footer = () => {
           >
             Vercel
           </a>
-          
         </div>
-        <div>
+        <div className="m-1 whitespace-nowrap">
           <span className="text-rose-600">&copy;</span> 2007-{year}
         </div>
       </div>
