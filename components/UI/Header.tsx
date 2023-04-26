@@ -74,52 +74,59 @@ const Header = () => {
           <ToggleTheme className="ml-4" />
         </div>
       </nav>
-      <Dialog
-        as="div"
-        className="lg:hidden"
-        open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
-      >
-        <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white dark:bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
-            <div className="-mt-1.5 text-2xl font-black">
-              Dima Paputsa
-              <div className="text-xs font-semibold uppercase">
-                Front-end engineer
+      <Transition appear show={mobileMenuOpen} as={Fragment}>
+        <Dialog as="div" className="lg:hidden" onClose={setMobileMenuOpen}>
+          <div className="fixed inset-0 z-10" />
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-300"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white dark:bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+              <div className="flex items-center justify-between">
+                <div className="-mt-1.5 text-2xl font-black">
+                  Dima Paputsa
+                  <div className="text-xs font-semibold uppercase">
+                    Front-end engineer
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="sr-only">Close menu</span>
+                  <XMarkIcon
+                    className="h-6 w-6 dark:text-white"
+                    aria-hidden="true"
+                  />
+                </button>
               </div>
-            </div>
-            <button
-              type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon
-                className="h-6 w-6 dark:text-white"
-                aria-hidden="true"
-              />
-            </button>
-          </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
-                {menuItems.map((item) => (
-                  <ActiveLink
-                    href={item.path}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-gray-50 dark:hover:bg-zinc-800"
-                    activeClassName="text-rose-600 dark:text-rose-600"
-                    onClick={() => setMobileMenuOpen(false)}
-                    key={item.key}
-                  >
-                    <FormattedMessage id={`app.menu.${item.key}`} />
-                  </ActiveLink>
-                ))}
+              <div className="mt-6 flow-root">
+                <div className="-my-6 divide-y divide-gray-500/10">
+                  <div className="space-y-2 py-6">
+                    {menuItems.map((item) => (
+                      <ActiveLink
+                        href={item.path}
+                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-gray-50 dark:hover:bg-zinc-800"
+                        activeClassName="text-rose-600 dark:text-rose-600"
+                        onClick={() => setMobileMenuOpen(false)}
+                        key={item.key}
+                      >
+                        <FormattedMessage id={`app.menu.${item.key}`} />
+                      </ActiveLink>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </Dialog.Panel>
-      </Dialog>
+            </Dialog.Panel>
+          </Transition.Child>
+        </Dialog>
+      </Transition>
     </div>
   );
 };
