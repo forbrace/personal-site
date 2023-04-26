@@ -5,7 +5,6 @@ import { Inter } from "next/font/google";
 import Head from "next/head";
 import { useIntl } from "react-intl";
 import { useLocale } from "@/hooks/useLocale";
-import GTag from "@/components/UI/GTag";
 
 const inter = Inter({ subsets: ["cyrillic", "latin"] });
 
@@ -19,7 +18,6 @@ const Layout: React.FC<Props> = ({ children, title, description }) => {
 
   return (
     <>
-      <GTag />
       <Head>
         <title>{translatedTitle}</title>
         <meta name="description" content={translatedDescription} />
