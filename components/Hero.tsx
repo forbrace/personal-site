@@ -6,7 +6,7 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 const Hero = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+    <div className="md:grid grid-cols-1 md:grid-cols-12 gap-8">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -19,7 +19,7 @@ const Hero = () => {
         <p className="mt-7 mb-12 text-2xl max-w-[600px]">
           <FormattedMessage id="app.hero.summary" />
         </p>
-        <div className="mb-7 lg:mb-32">
+        <div className="mb-10 lg:mb-32">
           <div className="flex flex-wrap items-center -m-3">
             {/* figma => react */}
             <div className="flex items-center m-3">
