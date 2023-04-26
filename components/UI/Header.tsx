@@ -76,24 +76,37 @@ const Header = () => {
       </nav>
       <Transition appear show={mobileMenuOpen} as={Fragment}>
         <Dialog as="div" className="lg:hidden" onClose={setMobileMenuOpen}>
-          <div className="fixed inset-0 z-10" />
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div className="fixed inset-0 bg-black bg-opacity-25" />
+        </Transition.Child>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
+            enterFrom="translate-x-full"
+            enterTo="translate-x-0"
             leave="ease-in duration-300"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
+            leaveFrom="translate-x-0"
+            leaveTo="translate-x-full"
           >
-            <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white dark:bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <Dialog.Panel className="fixed du inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white dark:bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
               <div className="flex items-center justify-between">
-                <div className="-mt-1.5 text-2xl font-black">
+                <Link
+                  href="/"
+                  className="-mt-1 text text-2xl md:text-3xl font-black"
+                >
                   Dima Paputsa
                   <div className="text-xs font-semibold uppercase">
                     Front-end engineer
                   </div>
-                </div>
+                </Link>
                 <button
                   type="button"
                   className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -114,7 +127,6 @@ const Header = () => {
                         href={item.path}
                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-gray-50 dark:hover:bg-zinc-800"
                         activeClassName="text-rose-600 dark:text-rose-600"
-                        onClick={() => setMobileMenuOpen(false)}
                         key={item.key}
                       >
                         <FormattedMessage id={`app.menu.${item.key}`} />
