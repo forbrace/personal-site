@@ -1,5 +1,5 @@
 import { Menu, Transition } from "@headlessui/react";
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import { ChevronDownIcon, CheckIcon } from "@heroicons/react/20/solid";
 import { Locale, useLocale } from "@/hooks/useLocale";
 
@@ -14,11 +14,7 @@ const LangMenu: React.FC<{ className?: string; isAbbr?: boolean }> = ({
   const selectHandler = (locale: string): void => {
     switchLocale(locale as Locale);
   };
-
-  useEffect(() => {
-    const currentLocale = localStorage.getItem("currentLocale");
-    switchLocale((currentLocale ? currentLocale : locale) as Locale);
-  }, []);
+  switchLocale(locale as Locale);
 
   return (
     <Menu as="div" className={`${className} relative z-10 text-left`}>
