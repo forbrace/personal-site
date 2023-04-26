@@ -32,11 +32,11 @@ const Footer = () => {
           </a>
           , Hosted on&nbsp; 
           <a
-            href="https://www.netlify.com"
+            href="https://vercel.com"
             className="underline decoration-solid hover:text-rose-600"
             target="_blank"
           >
-            Netlify
+            Vercel
           </a>
           
         </div>
