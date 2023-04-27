@@ -98,16 +98,24 @@ const Header = () => {
           >
             <Dialog.Panel className="fixed du inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white dark:bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
               <div className="flex items-center justify-between">
-                <ActiveLink
-                  href="/"
-                  className="-mt-1 text text-2xl md:text-3xl font-black"
-                  activeClassName="pointer-events-none"
-                >
-                  Dima Paputsa
-                  <div className="text-xs font-semibold uppercase">
-                    Front-end engineer
+                {isHomePage ? (
+                  <div className="-mt-1 text text-2xl md:text-3xl font-black">
+                    Dima Paputsa
+                    <div className="text-xs font-semibold uppercase">
+                      Front-end engineer
+                    </div>
                   </div>
-                </ActiveLink>
+                ) : (
+                  <Link
+                    href="/"
+                    className="-mt-1 text text-2xl md:text-3xl font-black"
+                  >
+                    Dima Paputsa
+                    <div className="text-xs font-semibold uppercase">
+                      Front-end engineer
+                    </div>
+                  </Link>
+                )}
                 <button
                   type="button"
                   className="-m-2.5 rounded-md p-2.5 text-gray-700"
