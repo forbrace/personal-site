@@ -191,7 +191,7 @@ function Contact() {
               <button
                 type="submit"
                 disabled={isSending}
-                className="block w-full rounded-md bg-rose-600 px-3.5 py-2.5 text-center font-semibold text-white shadow-sm hover:bg-rose-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-200"
+                className="block w-full rounded-md bg-rose-600 px-3.5 py-2.5 text-center font-semibold text-white shadow-sm hover:bg-rose-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
               >
                 {isSending ? (
                   <div className="flex items-center">
