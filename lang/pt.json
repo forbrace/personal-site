@@ -23,7 +23,9 @@
         },
         "dialog": {
           "title": "Sua mensagem foi enviada!",
+          "title_error": "Um erro ocorreu!",
           "text": "Vai receber uma resposta em breve. Obrigado!",
+          "text_error": "Por favor, tente novamente mais tarde.",
           "buttonLabel": "Entendi"
         }
       }

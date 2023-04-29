@@ -4,6 +4,9 @@ import DialogModal from "@/components/UI/DialogModal";
 import { motion } from "framer-motion";
 import { FormattedMessage } from "react-intl";
 
+const token = process.env.NEXT_PUBLIC_TELEGRAM_TOKEN;
+const chatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
+
 type FormValues = {
   email: string;
   message: string;
@@ -14,10 +17,9 @@ function classNames(...classes: string[]) {
 }
 
 function Contact() {
-  const [agreed, setAgreed] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [error, setError] = useState("");
 
   const {
     register,
@@ -29,36 +31,36 @@ function Contact() {
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     setIsSending(true);
 
-    const req = await fetch("/api/contact", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    });
+    const { email, message } = data;
 
-    if (!req.ok) {
+    const text = `***** Message *****%0A
+✉️ Email: ${email}%0A
+💬 Message: ${message}%0A
+    *****************`;
+
+    // send text
+    try {
+      const textReq = await fetch(
+        `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&parse_mode=html&text=${text}`
+      );
+      if (!textReq.ok) {
+        setIsSending(false);
+        setError("Error occurred!");
+        setIsOpenModal(true);
+        return;
+      }
+    } catch (e) {
+      // console.log(e.message);
       setIsSending(false);
-      setIsSubmitted(true);
-      throw new Error("Error!");
+      setError("Error occurred!");
+      setIsOpenModal(true);
     }
 
-    const res = await req.json();
-
+    // all done!
     setIsSending(false);
-    setIsSubmitted(true);
     reset();
+    setError("");
     setIsOpenModal(true);
-  };
-
-  const [showEmail, setShowEmail] = useState(false);
-
-  const showEmailandler = () => {
-    setShowEmail(true);
-    setTimeout(() => {
-      setShowEmail(false);
-    }, 3000);
   };
 
   return (
@@ -230,8 +232,16 @@ function Contact() {
       <DialogModal
         isOpenModal={isOpenModal}
         setIsOpenModal={setIsOpenModal}
-        title="app.hero.form.dialog.title"
-        text="app.hero.form.dialog.text"
+        title={
+          error
+            ? "app.hero.form.dialog.title_error"
+            : "app.hero.form.dialog.title"
+        }
+        text={
+          error
+            ? "app.hero.form.dialog.text_error"
+            : "app.hero.form.dialog.text"
+        }
         buttonLabel="app.hero.form.dialog.buttonLabel"
       />
     </>

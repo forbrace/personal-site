@@ -23,7 +23,9 @@
         },
         "dialog": {
           "title": "Your message has been submitted!",
+          "title_error": "An error occurred!",
           "text": "You will get an answer soon. Thank you!",
+          "text_error": "Please try again later.",
           "buttonLabel": "Got it, thanks!"
         }
       }
