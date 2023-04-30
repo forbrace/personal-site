@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FormattedMessage } from "react-intl";
@@ -12,11 +10,6 @@ import followbackImage from "@/images/followback.png";
 import boomerangImage from "@/images/boomerang.png";
 import campusonfireImage from "@/images/campusonfire.png";
 import simplenightImage from "@/images/simplenight.png";
-
-type FormValues = {
-  email: string;
-  message: string;
-};
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -89,54 +82,7 @@ const works = [
   },
 ];
 
-function Contact() {
-  const [agreed, setAgreed] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isSending, setIsSending] = useState(false);
-  const [isOpenModal, setIsOpenModal] = useState(false);
-
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<FormValues>();
-
-  const onSubmit: SubmitHandler<FormValues> = async (data) => {
-    setIsSending(true);
-
-    const req = await fetch("/api/contact", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    });
-
-    if (!req.ok) {
-      setIsSending(false);
-      setIsSubmitted(true);
-      throw new Error("Error!");
-    }
-
-    const res = await req.json();
-
-    setIsSending(false);
-    setIsSubmitted(true);
-    reset();
-    setIsOpenModal(true);
-  };
-
-  const [showEmail, setShowEmail] = useState(false);
-
-  const showEmailandler = () => {
-    setShowEmail(true);
-    setTimeout(() => {
-      setShowEmail(false);
-    }, 3000);
-  };
-
+function Work() {
   return (
     <>
       <motion.div
@@ -146,7 +92,7 @@ function Contact() {
         className="pb-10"
       >
         <h1 className="text-rose-600 text-[36px] mt-4 md:mt-0 lg:mt-10 md:text-[40px] lg:text-[55px] xl:text-[67px] leading-[110%] text-left font-black">
-        <FormattedMessage id="app.work.title" />
+          <FormattedMessage id="app.work.title" />
         </h1>
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {works.map((work) => (
@@ -191,7 +137,9 @@ function Contact() {
                   {work.years}
                 </div>
               </div>
-              <div className="mt-2"><FormattedMessage id={work.description} /></div>
+              <div className="mt-2">
+                <FormattedMessage id={work.description} />
+              </div>
             </div>
           ))}
         </div>
@@ -200,4 +148,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Work;
